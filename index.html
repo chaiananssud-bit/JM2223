@@ -10,21 +10,23 @@
         :root {
             --primary-purple: #6a1b9a;
             --accent-gold: #f1c40f;
-            --dark-overlay: rgba(0, 0, 0, 0.8);
+            --dark-overlay: rgba(0, 0, 0, 0.85);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0; padding: 0; color: white;
-            background: url('https://akmweb.youngjoygame.com/web/gms/image/bc8375c54a43cc02fedcc304033c23bb.webp') no-repeat center center fixed;
+            /* Background Image URL အသစ်ကို ဒီနေရာမှာ ပြောင်းထားပါတယ် */
+            background: url('https://i.pinimg.com/736x/31/31/6a/31316af172d5c1078ed778a00c51a29c.jpg') no-repeat center center fixed;
             background-size: cover;
         }
 
         .container { background: var(--dark-overlay); min-height: 100vh; padding: 20px; box-sizing: border-box; }
 
         .header { text-align: center; margin-bottom: 20px; }
+        
         .main-logo { 
-            width: 110px; height: 110px; border-radius: 20px; 
+            width: 110px; height: 110px; border-radius: 25px; 
             border: 3px solid var(--accent-gold); 
             box-shadow: 0 0 20px rgba(241, 196, 15, 0.4); 
             object-fit: cover;
@@ -39,47 +41,59 @@
         .user-profile img { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--accent-gold); }
         .user-profile span { font-size: 14px; font-weight: 500; color: var(--accent-gold); }
 
-        .id-section { display: flex; gap: 10px; margin-bottom: 10px; }
+        .id-section { display: flex; gap: 10px; margin-bottom: 5px; }
         .id-input {
             flex: 1; padding: 15px; border-radius: 12px; border: 2px solid var(--primary-purple);
             background: rgba(255, 255, 255, 0.9); color: #333; font-weight: bold; font-size: 16px; outline: none; text-align: center;
         }
 
-        #nameDisplay { text-align: center; margin-bottom: 20px; font-weight: bold; min-height: 20px; color: #00ff88; text-shadow: 1px 1px 2px black; }
+        #nameDisplay { 
+            text-align: center; margin-bottom: 15px; font-weight: bold; 
+            min-height: 20px; color: #00ff88; text-shadow: 1px 1px 2px black; 
+        }
 
         .category-title {
-            margin: 20px 0 10px; font-weight: bold; display: flex; align-items: center; gap: 8px;
-            color: var(--accent-gold); border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 5px;
+            margin: 25px 0 10px; font-weight: bold; display: flex; align-items: center; gap: 8px;
+            color: var(--accent-gold); border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 5px; font-size: 18px;
         }
         
-        /* Promo Notice Style */
         .promo-notice {
-            background: rgba(241, 196, 15, 0.1); border-left: 4px solid var(--accent-gold);
-            padding: 10px; margin-bottom: 15px; font-size: 13px; color: #fdfdfd; line-height: 1.5;
+            background: rgba(241, 196, 15, 0.15); 
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 4px;
+            padding: 12px; margin-bottom: 15px; 
+            font-size: 13px; color: #fdfdfd; line-height: 1.5;
+            text-align: left;
         }
 
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
         @keyframes pulseGlow {
-            0% { box-shadow: 0 0 5px rgba(241, 196, 15, 0.2); }
-            50% { box-shadow: 0 0 15px rgba(241, 196, 15, 0.5); }
-            100% { box-shadow: 0 0 5px rgba(241, 196, 15, 0.2); }
+            0% { box-shadow: 0 0 5px rgba(241, 196, 15, 0.2); border-color: transparent; }
+            50% { box-shadow: 0 0 15px rgba(241, 196, 15, 0.5); border-color: rgba(241, 196, 15, 0.3); }
+            100% { box-shadow: 0 0 5px rgba(241, 196, 15, 0.2); border-color: transparent; }
         }
 
         .item {
             background: rgba(255,255,255,0.1); border: 2px solid transparent; border-radius: 15px;
             padding: 15px; text-align: center; backdrop-filter: blur(8px); transition: 0.3s;
             animation: pulseGlow 3s infinite ease-in-out;
+            position: relative;
         }
-        .item.active { border-color: var(--accent-gold) !important; background: rgba(106, 27, 154, 0.4); transform: scale(1.05); animation: none; box-shadow: 0 0 20px var(--accent-gold); }
-        .item img { width: 45px; height: 45px; object-fit: contain; margin-bottom: 8px; }
-        .item .name { display: block; font-size: 14px; font-weight: bold; }
-        .item .price { display: block; font-size: 13px; color: #00ff88; margin-top: 5px; font-weight: bold; }
+        .item.active { 
+            border-color: var(--accent-gold) !important; 
+            background: rgba(106, 27, 154, 0.6); 
+            transform: scale(1.05); animation: none; 
+            box-shadow: 0 0 20px var(--accent-gold); 
+        }
+        .item img { width: 50px; height: 50px; object-fit: contain; margin-bottom: 8px; }
+        .item .name { display: block; font-size: 15px; font-weight: bold; }
+        .item .price { display: block; font-size: 14px; color: #00ff88; margin-top: 5px; font-weight: bold; }
 
         .btn-order {
             width: 100%; padding: 16px; border: none; border-radius: 12px;
             font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.2s;
-            background: var(--accent-gold); color: #000; margin-top: 25px;
+            background: var(--accent-gold); color: #000; margin-top: 30px; margin-bottom: 20px;
             opacity: 0.5; pointer-events: none;
             display: flex; align-items: center; justify-content: center; gap: 10px;
         }
@@ -108,7 +122,8 @@
 
     <div class="category-title">💎 Double Diamond (Promo)</div>
     <div class="promo-notice">
-        ⚠️ <b>dia2 အကောင့်တခုတခါပဲထည့်လို့ရပါတယ်နော် အသေးစိတ်လာမေးလို့ရပါတယ်</b>
+        <i class="fa-solid fa-circle-exclamation" style="color: var(--accent-gold);"></i> 
+        <b>dia2 အကောင့်တခုတခါပဲထည့်လို့ရပါတယ်နော် အသေးစိတ်လာမေးလို့ရပါတယ်</b>
     </div>
     <div class="grid" id="promoGrid"></div>
 
@@ -148,9 +163,9 @@
     let selectedPrice = "";
     let currentPlayerName = "";
 
-    // Promo & Normal Diamond Data
     const promos = [
-        ["50+50", "3,500 ks"], ["150+150", "9,900 ks"], ["250+250", "15,700 ks"], ["500+500", "31,600 ks"]
+        ["50+50", "3,500 ks"], ["150+150", "9,900 ks"], 
+        ["250+250", "15,700 ks"], ["500+500", "31,600 ks"]
     ];
 
     const diamonds = [
@@ -165,12 +180,12 @@
     const lowDiaIcon = "https://cdn1.codashop.com/images/106_5e7a01a7-89b9-4b13-a512-a3e72f63f0d1_product/1760335249005_d119a418-95ae-4562-bd62-135e57cf7504.png";
     const highDiaIcon = "https://cdn1.codashop.com/images/106_5e7a01a7-89b9-4b13-a512-a3e72f63f0d1_product/1760335247872_f9e8beef-fd2b-46cf-b7fa-99b6132c2e99.png";
 
-    // Fill Grids
     function fillGrid(containerId, data) {
         const container = document.getElementById(containerId);
         data.forEach(d => {
             const amount = parseInt(d[0]);
             const icon = (amount >= 600) ? highDiaIcon : lowDiaIcon;
+            
             container.innerHTML += `
                 <div class="item" onclick="selectItem(this, '${d[0]}', '${d[1]}')">
                     <img src="${icon}">
@@ -189,7 +204,7 @@
         const sid = document.getElementById('serverId').value;
         const display = document.getElementById('nameDisplay');
 
-        if (gid.length >= 8 && sid.length >= 4) {
+        if (gid.length >= 6 && sid.length >= 4) {
             display.innerText = "⌛ Checking Name...";
             try {
                 const response = await fetch(`https://pizzoshop.com/mlchecker/api.php?id=${gid}&zone=${sid}`);
@@ -203,8 +218,12 @@
                     display.innerText = "❌ ID Not Found";
                     display.style.color = "#ff4444";
                 }
-            } catch (e) { display.innerText = ""; }
-        } else { display.innerText = ""; }
+            } catch (e) { 
+                display.innerText = ""; 
+            }
+        } else { 
+            display.innerText = ""; 
+        }
         validateForm();
     }
 
@@ -231,13 +250,13 @@
         const customerName = user ? user.first_name : "Customer";
         
         const message = `Hello, JM Diamond Shop! 🚀
-Customer: ${customerName}
+
 I want to order:
 💎 Product: ${selectedProduct}
 💰 Price: ${selectedPrice}
 👤 User ID: ${gid}
 🌐 Server ID: ${sid}
-📝 Player Name: ${currentPlayerName || 'Not Found'}`;
+📝 Player Name: ${currentPlayerName || 'Not Verified'}`;
 
         window.open(`https://t.me/JinMa2000?text=${encodeURIComponent(message)}`, '_blank');
     }
